@@ -66,10 +66,10 @@ async function aiSearch(query, inventory) {
 
 // ─── Global CSS ───────────────────────────────────────────────────────────────
 const CSS = `
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&display=swap');
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  --bg:#F4EFE6;--bg2:#EDE6DA;--bg3:#E2DBD0;
+  --bg:#F2EBD9;--bg2:#E8DFC8;--bg3:#E2DBD0;
   --ink:#1A1612;--ink2:#4A423A;--ink3:#8A7E74;
   --gold:#B8860B;--glt:#D4A017;--gbg:#FDF6E3;--gbd:#DCC57A;
   --red:#C0392B;--rbg:#FAEEEC;--rbd:#E8B5AE;
@@ -77,12 +77,12 @@ const CSS = `
   --blu:#3730A3;--bbg:#EEF2FF;--bbd:#B0BFFF;
   --bd:#C8BFB0;--bd2:#DDD6CC;
 }
-body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;-webkit-font-smoothing:antialiased;}
+body{background:var(--bg);color:var(--ink);font-family:'Courier Prime','Courier New',monospace;-webkit-font-smoothing:antialiased;}
 ::-webkit-scrollbar{width:3px;} ::-webkit-scrollbar-track{background:var(--bg2);} ::-webkit-scrollbar-thumb{background:var(--bd);}
-input,textarea,select{background:#fff;border:1.5px solid var(--bd);color:var(--ink);padding:11px 14px;font-family:'DM Sans',sans-serif;font-size:14px;border-radius:4px;width:100%;outline:none;transition:border-color .15s;-webkit-appearance:none;}
+input,textarea,select{background:#fff;border:1.5px solid var(--bd);color:var(--ink);padding:11px 14px;font-family:'Courier Prime',monospace;font-size:14px;border-radius:4px;width:100%;outline:none;transition:border-color .15s;-webkit-appearance:none;}
 input:focus,textarea:focus,select:focus{border-color:var(--ink);}
 input::placeholder,textarea::placeholder{color:var(--ink3);}
-button{cursor:pointer;font-family:'DM Sans',sans-serif;border:none;transition:all .15s;}
+button{cursor:pointer;font-family:'Courier Prime',monospace;border:none;transition:all .15s;}
 .btn-ink{background:var(--ink);color:var(--bg);padding:11px 22px;font-size:13px;font-weight:500;border-radius:4px;display:inline-flex;align-items:center;gap:8px;}
 .btn-ink:hover{background:#2d2520;} .btn-ink:disabled{opacity:.5;cursor:not-allowed;}
 .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--bd);padding:10px 20px;font-size:13px;border-radius:4px;}
@@ -148,7 +148,7 @@ function Logo({ size="md", onClick, light=false }) {
         <rect x="42.5" y="20.5" width="3" height="5" rx="1" fill={ac}/>
       </svg>
       <div style={{lineHeight:1}}>
-        <div style={{fontFamily:"'Playfair Display',serif",fontSize:Math.round(19*s),fontWeight:700,letterSpacing:"-0.01em",color:fg,lineHeight:1.1}}>The Horological</div>
+        <div style={{fontFamily:"'Special Elite',monospace",fontSize:Math.round(18*s),letterSpacing:"0.02em",color:fg,lineHeight:1.1}}>The Horological</div>
         <div style={{display:"flex",alignItems:"center",gap:6,marginTop:4}}>
           <div style={{fontFamily:"'DM Mono',monospace",fontSize:Math.round(8.5*s),letterSpacing:"0.28em",color:ac,textTransform:"uppercase"}}>Catalog</div>
           <div style={{width:1,height:9,background:ac,opacity:.4}}/>
@@ -182,7 +182,7 @@ function UPIModal({ amount, purpose, onSuccess, onClose }) {
         {/* Header */}
         <div style={{marginBottom:24}}>
           <div className="sl" style={{marginBottom:4}}>Secure Payment</div>
-          <div style={{fontFamily:"'Playfair Display',serif",fontSize:24,fontWeight:700}}>₹{amount.toLocaleString("en-IN")}</div>
+          <div style={{fontFamily:"'Special Elite',monospace",fontSize:24,fontWeight:700}}>₹{amount.toLocaleString("en-IN")}</div>
           <div style={{fontSize:12,color:"var(--ink3)",marginTop:3}}>{purpose}</div>
         </div>
 
@@ -269,7 +269,7 @@ function UPIModal({ amount, purpose, onSuccess, onClose }) {
         {step==="done" && (
           <div className="fade-in" style={{textAlign:"center",padding:"20px 0"}}>
             <div style={{fontSize:52,marginBottom:12}}>✓</div>
-            <div style={{fontFamily:"'Playfair Display',serif",fontSize:26,fontWeight:700,marginBottom:8}}>Payment received.</div>
+            <div style={{fontFamily:"'Special Elite',monospace",fontSize:26,marginBottom:8}}>Payment received.</div>
             <div style={{fontFamily:"'DM Mono',monospace",fontSize:11,color:"var(--ink3)",marginBottom:4}}>UTR: {txnId}</div>
             <div style={{fontSize:13,color:"var(--ink3)"}}>Confirming your order…</div>
           </div>
@@ -347,7 +347,7 @@ function AuthModalInner({ mode, setMode, role, setRole, email, setEmail, pass, s
           Demo: {DEMO[role]}
         </div>
 
-        <div style={{fontFamily:"'Playfair Display',serif",fontSize:22,fontWeight:700,marginBottom:20,textAlign:"center"}}>
+        <div style={{fontFamily:"'Special Elite',monospace",fontSize:22,marginBottom:20,textAlign:"center"}}>
           {mode==="login"?"Sign in":"Create account"}
         </div>
 
@@ -525,8 +525,8 @@ export default function App() {
 function AccessDenied({ openAuth }) {
   return (
     <div style={{textAlign:"center",padding:"80px 0"}}>
-      <div style={{fontFamily:"'Playfair Display',serif",fontSize:48,fontWeight:900,marginBottom:12}}>⊘</div>
-      <div style={{fontFamily:"'Playfair Display',serif",fontSize:28,fontWeight:700,marginBottom:8}}>Access restricted.</div>
+      <div style={{fontFamily:"'Special Elite',monospace",fontSize:48,marginBottom:12}}>⊘</div>
+      <div style={{fontFamily:"'Special Elite',monospace",fontSize:28,marginBottom:8}}>Access restricted.</div>
       <p style={{color:"var(--ink3)",marginBottom:24}}>You need to sign in with the right role to view this page.</p>
       <button className="btn-ink" onClick={openAuth}>Sign in →</button>
     </div>
@@ -545,7 +545,7 @@ function HomeView({ setView, inventory, sellers, session, openAuth }) {
             <span className="tag tag-grn">{avail} in stock</span>
             <span className="tag tag-gold">✦ {sellers.filter(s=>s.verified).length} Verified Sellers</span>
           </div>
-          <h1 style={{fontFamily:"'Playfair Display',serif",fontSize:58,fontWeight:900,lineHeight:1.04,marginBottom:22,letterSpacing:"-0.025em"}}>
+          <h1 style={{fontFamily:"'Special Elite',monospace",fontSize:58,lineHeight:1.04,marginBottom:22,letterSpacing:"-0.025em"}}>
             Your nani's<br/>watch deserves<br/><em style={{color:"#B8860B"}}>your wrist.</em>
           </h1>
           <p style={{fontSize:15,color:"#4A423A",lineHeight:1.75,maxWidth:420,marginBottom:36}}>
@@ -574,7 +574,7 @@ function HomeView({ setView, inventory, sellers, session, openAuth }) {
               const r=(d-90)*Math.PI/180,maj=i%3===0,r1=96,r2=maj?86:91;
               return <line key={d} x1={140+r1*Math.cos(r)} y1={160+r1*Math.sin(r)} x2={140+r2*Math.cos(r)} y2={160+r2*Math.sin(r)} stroke="#1A1612" strokeWidth={maj?2.5:1.2}/>;
             })}
-            <text x="140" y="126" textAnchor="middle" fill="#1A1612" fontFamily="'Playfair Display',serif" fontSize="15" fontWeight="900" letterSpacing="4">HMT</text>
+            <text x="140" y="126" textAnchor="middle" fill="#1A1612" fontFamily="'Special Elite',monospace" fontSize="15" fontWeight="900" letterSpacing="4">HMT</text>
             <text x="140" y="142" textAnchor="middle" fill="#8A7E74" fontFamily="'DM Mono',monospace" fontSize="7" letterSpacing="2.5">PILOT</text>
             <line x1="140" y1="160" x2="140" y2="88"  stroke="#1A1612" strokeWidth="4.5" strokeLinecap="round"/>
             <line x1="140" y1="160" x2="192" y2="124" stroke="#1A1612" strokeWidth="3"   strokeLinecap="round"/>
@@ -590,7 +590,7 @@ function HomeView({ setView, inventory, sellers, session, openAuth }) {
         {[{n:"HMT",s:"Est. 1961 · Bangalore",b:"The OG"},{n:"Allwyn",s:"Hyderabad · 1942–98",b:"Slept on"},{n:"Ricoh",s:"Japan × India · 70s–80s",b:"Rare find"}].map(b=>(
           <div key={b.n} style={{textAlign:"center"}}>
             <div style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:"#D4A017",letterSpacing:"0.18em",marginBottom:4}}>{b.b.toUpperCase()}</div>
-            <div style={{fontFamily:"'Playfair Display',serif",fontSize:28,fontWeight:900,color:"#F4EFE6"}}>{b.n}</div>
+            <div style={{fontFamily:"'Special Elite',monospace",fontSize:28,color:"#F4EFE6"}}>{b.n}</div>
             <div style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:"#8A7E74",letterSpacing:"0.1em",marginTop:3}}>{b.s}</div>
           </div>
         ))}
@@ -606,9 +606,9 @@ function HomeView({ setView, inventory, sellers, session, openAuth }) {
           {n:"04",t:"Sell",p:"Free",b:"List on our marketplace. Get verified. Build a reputation.",v:"market",c:"#3730A3"},
         ].map(s=>(
           <div key={s.n} className="card" style={{position:"relative",overflow:"hidden"}}>
-            <div style={{position:"absolute",top:-10,right:6,fontFamily:"'Playfair Display',serif",fontSize:72,fontWeight:900,color:s.c,opacity:.06,lineHeight:1,pointerEvents:"none"}}>{s.n}</div>
+            <div style={{position:"absolute",top:-10,right:6,fontFamily:"'Special Elite',monospace",fontSize:72,color:s.c,opacity:.06,lineHeight:1,pointerEvents:"none"}}>{s.n}</div>
             <div style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:s.c,letterSpacing:"0.16em",marginBottom:8}}>{s.n} / {s.p}</div>
-            <div style={{fontFamily:"'Playfair Display',serif",fontSize:19,fontWeight:700,marginBottom:8}}>{s.t}</div>
+            <div style={{fontFamily:"'Special Elite',monospace",fontSize:19,marginBottom:8}}>{s.t}</div>
             <p style={{fontSize:12.5,color:"#4A423A",lineHeight:1.65,marginBottom:18}}>{s.b}</p>
             <button className="btn-ghost" style={{fontSize:12,padding:"7px 14px"}} onClick={()=>setView(s.v)}>Go →</button>
           </div>
@@ -617,7 +617,7 @@ function HomeView({ setView, inventory, sellers, session, openAuth }) {
 
       {/* Featured sellers */}
       <div style={{display:"flex",justifyContent:"space-between",alignItems:"baseline",marginBottom:16}}>
-        <div><span className="sl">Trusted Sellers</span><h3 style={{fontFamily:"'Playfair Display',serif",fontSize:26,fontWeight:700}}>People who know their watches.</h3></div>
+        <div><span className="sl">Trusted Sellers</span><h3 style={{fontFamily:"'Special Elite',monospace",fontSize:26,fontWeight:700}}>People who know their watches.</h3></div>
         <button className="btn-ghost" style={{fontSize:12}} onClick={()=>setView("market")}>All sellers →</button>
       </div>
       <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(230px,1fr))",gap:14,marginBottom:52}}>
@@ -626,7 +626,7 @@ function HomeView({ setView, inventory, sellers, session, openAuth }) {
 
       {/* Recent inventory */}
       <div style={{display:"flex",justifyContent:"space-between",alignItems:"baseline",marginBottom:16}}>
-        <div><span className="sl">Just dropped</span><h3 style={{fontFamily:"'Playfair Display',serif",fontSize:26,fontWeight:700}}>Available now.</h3></div>
+        <div><span className="sl">Just dropped</span><h3 style={{fontFamily:"'Special Elite',monospace",fontSize:26,fontWeight:700}}>Available now.</h3></div>
         <button className="btn-ghost" style={{fontSize:12}} onClick={()=>setView("search")}>View all →</button>
       </div>
       <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(240px,1fr))",gap:14}}>
@@ -643,7 +643,7 @@ function WatchCard({ watch:w, sellerName, sellerVerified }) {
       <div style={{display:"flex",justifyContent:"space-between",marginBottom:10}}>
         <div>
           <div style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:"#8A7E74",letterSpacing:"0.15em",marginBottom:4,textTransform:"uppercase"}}>{w.brand} · {w.decade}</div>
-          <div style={{fontFamily:"'Playfair Display',serif",fontSize:20,fontWeight:700,lineHeight:1.1}}>{w.model}</div>
+          <div style={{fontFamily:"'Special Elite',monospace",fontSize:20,lineHeight:1.1}}>{w.model}</div>
           <div style={{fontSize:9.5,color:"#8A7E74",fontFamily:"'DM Mono',monospace",marginTop:2}}>Ref. {w.reference}</div>
         </div>
         <span className={`tag ${w.available?"tag-grn":"tag-red"}`}>{w.available?"Available":"Sold"}</span>
@@ -656,7 +656,7 @@ function WatchCard({ watch:w, sellerName, sellerVerified }) {
         </div>
       )}
       <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
-        <div style={{fontFamily:"'Playfair Display',serif",fontSize:22,fontWeight:700,color:"#B8860B"}}>₹{w.price.toLocaleString("en-IN")}</div>
+        <div style={{fontFamily:"'Special Elite',monospace",fontSize:22,color:"#B8860B"}}>₹{w.price.toLocaleString("en-IN")}</div>
         <span className="tag">{w.condition}</span>
       </div>
     </div>
@@ -672,7 +672,7 @@ function SellerCard({ seller:s, onClick }) {
         <div className="avatar">{s.avatar}</div>
         <div style={{flex:1}}>
           <div style={{display:"flex",alignItems:"center",gap:6,flexWrap:"wrap",marginBottom:3}}>
-            <div style={{fontFamily:"'Playfair Display',serif",fontSize:16,fontWeight:700}}>{s.name}</div>
+            <div style={{fontFamily:"'Special Elite',monospace",fontSize:16,fontWeight:700}}>{s.name}</div>
             {s.verified && <span className="vbadge" style={s.badge==="Top Seller"?{background:"#FFF0F5",borderColor:"#F4AACA",color:"#9B2C5C"}:{}}>✦ {s.badge||"Verified"}</span>}
           </div>
           <div style={{fontFamily:"'DM Mono',monospace",fontSize:9.5,color:"#8A7E74"}}>{s.handle} · {s.city}</div>
@@ -707,7 +707,7 @@ function SearchView({ inventory }) {
 
   return (
     <div className="fade-in">
-      <div style={{marginBottom:32}}><span className="sl">AI Search</span><h2 style={{fontFamily:"'Playfair Display',serif",fontSize:40,fontWeight:900,letterSpacing:"-0.025em"}}>Find your watch.</h2></div>
+      <div style={{marginBottom:32}}><span className="sl">AI Search</span><h2 style={{fontFamily:"'Special Elite',monospace",fontSize:40,letterSpacing:"-0.025em"}}>Find your watch.</h2></div>
       <div style={{display:"flex",gap:10,marginBottom:28}}>
         <input value={q} onChange={e=>setQ(e.target.value)} onKeyDown={e=>e.key==="Enter"&&doSearch()} placeholder="HMT Pilot black dial 70s under ₹3k  ·  Allwyn quartz date  ·  Ricoh auto deadstock" style={{flex:1}}/>
         <button className="btn-ink" onClick={doSearch} disabled={load} style={{minWidth:100,whiteSpace:"nowrap"}}>{load?"Scanning…":"Search →"}</button>
@@ -767,7 +767,7 @@ function RequestView({ inventory, requests, saveRequests, session, openAuth, toa
 
       <div style={{marginBottom:32}}>
         <span className="sl">Watch Sourcing</span>
-        <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:40,fontWeight:900,letterSpacing:"-0.025em",marginBottom:6}}>Tell us what you want.</h2>
+        <h2 style={{fontFamily:"'Special Elite',monospace",fontSize:40,letterSpacing:"-0.025em",marginBottom:6}}>Tell us what you want.</h2>
         <p style={{color:"#4A423A",fontSize:14}}>₹99 non-refundable · 7–14 days · We tap our network so you don't have to.</p>
       </div>
 
@@ -823,10 +823,10 @@ function RequestView({ inventory, requests, saveRequests, session, openAuth, toa
       {step===3 && (
         <div className="fade-in">
           <div style={{background:"#fff",border:"1.5px solid var(--bd)",borderRadius:8,padding:32,maxWidth:400}}>
-            <div style={{fontFamily:"'Playfair Display',serif",fontSize:22,fontWeight:700,marginBottom:20}}>Payment</div>
+            <div style={{fontFamily:"'Special Elite',monospace",fontSize:22,marginBottom:20}}>Payment</div>
             <div style={{background:"var(--bg2)",border:"1.5px solid var(--bd)",borderRadius:6,padding:20,textAlign:"center",marginBottom:24}}>
               <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#8A7E74",letterSpacing:"0.2em",marginBottom:8}}>TOTAL DUE</div>
-              <div style={{fontFamily:"'Playfair Display',serif",fontSize:52,fontWeight:900,color:"#B8860B",lineHeight:1}}>₹{amt}</div>
+              <div style={{fontFamily:"'Special Elite',monospace",fontSize:52,color:"#B8860B",lineHeight:1}}>₹{amt}</div>
               <div style={{fontSize:11,color:"#8A7E74",marginTop:8}}>Non-refundable{form.addAuth?" · auth check included":""}</div>
             </div>
             <button className="btn-gold" style={{width:"100%",padding:14,fontSize:15,marginBottom:10}} onClick={()=>setShowUPI(true)}>
@@ -844,8 +844,8 @@ function RequestView({ inventory, requests, saveRequests, session, openAuth, toa
 
       {step===4 && oid && (
         <div className="fade-in" style={{textAlign:"center",padding:"64px 0"}}>
-          <div style={{fontFamily:"'Playfair Display',serif",fontSize:64,fontWeight:900,color:"var(--grn)",lineHeight:1,marginBottom:8}}>✓</div>
-          <div style={{fontFamily:"'Playfair Display',serif",fontSize:42,fontWeight:900,marginBottom:8,letterSpacing:"-0.02em"}}>You're in.</div>
+          <div style={{fontFamily:"'Special Elite',monospace",fontSize:64,color:"var(--grn)",lineHeight:1,marginBottom:8}}>✓</div>
+          <div style={{fontFamily:"'Special Elite',monospace",fontSize:42,marginBottom:8,letterSpacing:"-0.02em"}}>You're in.</div>
           <div style={{fontFamily:"'DM Mono',monospace",fontSize:12,color:"#B8860B",letterSpacing:"0.2em",marginBottom:24}}>{oid}</div>
           <p style={{color:"#4A423A",fontSize:14,maxWidth:440,margin:"0 auto",lineHeight:1.75}}>We'll WhatsApp or email within 2–3 working days with an update on your {form.brand} {form.model}. Screenshot your ID.</p>
         </div>
@@ -873,7 +873,7 @@ function AuthSvcView({ requests, saveRequests, session, openAuth, toast }) {
     <div className="fade-in">
       {showUPI && <UPIModal amount={300} purpose="Authenticity Check" onSuccess={handlePaySuccess} onClose={()=>setUPI(false)}/>}
       <div style={{marginBottom:32}}><span className="sl">Authenticity Service</span>
-        <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:40,fontWeight:900,letterSpacing:"-0.025em",marginBottom:8}}>Real or not?<br/><em style={{color:"#B8860B"}}>We'll tell you.</em></h2>
+        <h2 style={{fontFamily:"'Special Elite',monospace",fontSize:40,letterSpacing:"-0.025em",marginBottom:8}}>Real or not?<br/><em style={{color:"#B8860B"}}>We'll tell you.</em></h2>
         <p style={{color:"#4A423A",fontSize:14,maxWidth:520,lineHeight:1.75}}>Send photos, we examine everything. Certificate in 3–5 days. <strong>₹300.</strong></p>
       </div>
       {!done ? (
@@ -889,8 +889,8 @@ function AuthSvcView({ requests, saveRequests, session, openAuth, toast }) {
         </>
       ) : (
         <div style={{textAlign:"center",padding:"64px 0"}}>
-          <div style={{fontSize:52,color:"var(--grn)",fontWeight:900,lineHeight:1,marginBottom:12}}>◈</div>
-          <div style={{fontFamily:"'Playfair Display',serif",fontSize:36,fontWeight:900,marginBottom:8}}>Request logged.</div>
+          <div style={{fontSize:52,color:"var(--grn)",fontWeight:400,lineHeight:1,marginBottom:12}}>◈</div>
+          <div style={{fontFamily:"'Special Elite',monospace",fontSize:36,marginBottom:8}}>Request logged.</div>
           <div style={{fontFamily:"'DM Mono',monospace",fontSize:12,color:"#B8860B",letterSpacing:"0.2em",marginBottom:20}}>{oid}</div>
           <p style={{color:"#4A423A",fontSize:14,maxWidth:440,margin:"0 auto",lineHeight:1.75}}>WhatsApp within 24h with photo upload link. Certificate in 3–5 days.</p>
         </div>
@@ -913,7 +913,7 @@ function TrackView({ requests, session }) {
 
   return (
     <div className="fade-in">
-      <div style={{marginBottom:32}}><span className="sl">Order Tracking</span><h2 style={{fontFamily:"'Playfair Display',serif",fontSize:40,fontWeight:900,letterSpacing:"-0.025em"}}>Where's my watch?</h2></div>
+      <div style={{marginBottom:32}}><span className="sl">Order Tracking</span><h2 style={{fontFamily:"'Special Elite',monospace",fontSize:40,letterSpacing:"-0.025em"}}>Where's my watch?</h2></div>
       <div style={{display:"flex",gap:10,marginBottom:28}}>
         <input value={id} onChange={e=>setId(e.target.value)} onKeyDown={e=>e.key==="Enter"&&track()} placeholder="THC-XXXXX or AUTH-XXXXX" style={{fontFamily:"'DM Mono',monospace",letterSpacing:"0.06em"}}/>
         <button className="btn-ink" onClick={track}>Track</button>
@@ -924,7 +924,7 @@ function TrackView({ requests, session }) {
           <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:16}}>
             <div>
               <div style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:"#8A7E74",letterSpacing:"0.15em",marginBottom:5}}>{found.id} · {found.type==="auth"?"AUTH":"SOURCING"} · ₹{found.amount}</div>
-              <div style={{fontFamily:"'Playfair Display',serif",fontSize:24,fontWeight:700}}>{found.watch}</div>
+              <div style={{fontFamily:"'Special Elite',monospace",fontSize:24,fontWeight:700}}>{found.watch}</div>
               <div style={{fontSize:13,color:"#4A423A",marginTop:4}}>{found.name} · {found.email}</div>
             </div>
             <span className="tag" style={{background:(sc[found.status]||"#8A7E74")+"18",borderColor:(sc[found.status]||"#8A7E74")+"55",color:sc[found.status]||"#8A7E74"}}>{found.status}</span>
@@ -950,7 +950,7 @@ function TrackView({ requests, session }) {
               <div key={r.id} className="card" style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"16px 20px"}}>
                 <div>
                   <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#8A7E74",marginBottom:3}}>{r.id}</div>
-                  <div style={{fontFamily:"'Playfair Display',serif",fontSize:17,fontWeight:700}}>{r.watch}</div>
+                  <div style={{fontFamily:"'Special Elite',monospace",fontSize:17,fontWeight:700}}>{r.watch}</div>
                 </div>
                 <div style={{textAlign:"right"}}>
                   <span className="tag" style={{background:(sc[r.status]||"#8A7E74")+"18",borderColor:(sc[r.status]||"#8A7E74")+"55",color:sc[r.status]||"#8A7E74",marginBottom:4,display:"inline-block"}}>{r.status}</span>
@@ -1000,7 +1000,7 @@ function MarketView({ sellers, listings, saveSellers, saveListings, session, ope
     <div className="fade-in">
       <div style={{marginBottom:32}}>
         <span className="sl">Trusted Seller Marketplace</span>
-        <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:40,fontWeight:900,letterSpacing:"-0.025em",marginBottom:8}}>Buy from people<br/><em style={{color:"#B8860B"}}>who actually know.</em></h2>
+        <h2 style={{fontFamily:"'Special Elite',monospace",fontSize:40,letterSpacing:"-0.025em",marginBottom:8}}>Buy from people<br/><em style={{color:"#B8860B"}}>who actually know.</em></h2>
         <p style={{color:"#4A423A",fontSize:14,maxWidth:520,lineHeight:1.7}}>Every seller reviewed before verification. Real ratings from real buyers.</p>
       </div>
 
@@ -1035,7 +1035,7 @@ function MarketView({ sellers, listings, saveSellers, saveListings, session, ope
                 <div key={l.id} className="card" style={{position:"relative"}}>
                   {l.verified && <div style={{position:"absolute",top:14,right:14}}><span className="tag tag-gold">✦ Verified</span></div>}
                   <div style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:"#8A7E74",textTransform:"uppercase",letterSpacing:"0.12em",marginBottom:3}}>{l.brand} · {l.decade}</div>
-                  <div style={{fontFamily:"'Playfair Display',serif",fontSize:20,fontWeight:700,marginBottom:2}}>{l.model}</div>
+                  <div style={{fontFamily:"'Special Elite',monospace",fontSize:20,marginBottom:2}}>{l.model}</div>
                   <div style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:"#8A7E74",marginBottom:10}}>Ref. {l.reference}</div>
                   <p style={{fontSize:12.5,color:"#4A423A",lineHeight:1.65,marginBottom:14}}>{l.description}</p>
                   {sel && (
@@ -1046,7 +1046,7 @@ function MarketView({ sellers, listings, saveSellers, saveListings, session, ope
                     </div>
                   )}
                   <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
-                    <div style={{fontFamily:"'Playfair Display',serif",fontSize:20,fontWeight:700,color:"#B8860B"}}>₹{l.price?.toLocaleString("en-IN")}</div>
+                    <div style={{fontFamily:"'Special Elite',monospace",fontSize:20,color:"#B8860B"}}>₹{l.price?.toLocaleString("en-IN")}</div>
                     <span className="tag">{l.condition}</span>
                   </div>
                 </div>
@@ -1070,7 +1070,7 @@ function MarketView({ sellers, listings, saveSellers, saveListings, session, ope
               <div className="avatar" style={{width:52,height:52,fontSize:16}}>{selSel.avatar}</div>
               <div style={{flex:1}}>
                 <div style={{display:"flex",alignItems:"center",gap:8,flexWrap:"wrap",marginBottom:4}}>
-                  <div style={{fontFamily:"'Playfair Display',serif",fontSize:22,fontWeight:700}}>{selSel.name}</div>
+                  <div style={{fontFamily:"'Special Elite',monospace",fontSize:22,fontWeight:700}}>{selSel.name}</div>
                   {selSel.verified && <span className="vbadge" style={selSel.badge==="Top Seller"?{background:"#FFF0F5",borderColor:"#F4AACA",color:"#9B2C5C"}:{}}>✦ {selSel.badge||"Verified"}</span>}
                 </div>
                 <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#8A7E74",marginBottom:8}}>{selSel.handle} · {selSel.city}</div>
@@ -1090,10 +1090,10 @@ function MarketView({ sellers, listings, saveSellers, saveListings, session, ope
               <div key={l.id} className="card">
                 {l.verified && <span className="tag tag-gold" style={{display:"inline-block",marginBottom:10}}>✦ Verified</span>}
                 <div style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:"#8A7E74",textTransform:"uppercase",marginBottom:3}}>{l.brand} · {l.decade}</div>
-                <div style={{fontFamily:"'Playfair Display',serif",fontSize:19,fontWeight:700,marginBottom:8}}>{l.model}</div>
+                <div style={{fontFamily:"'Special Elite',monospace",fontSize:19,marginBottom:8}}>{l.model}</div>
                 <p style={{fontSize:12.5,color:"#4A423A",lineHeight:1.65,marginBottom:12}}>{l.description}</p>
                 <div style={{display:"flex",justifyContent:"space-between"}}>
-                  <div style={{fontFamily:"'Playfair Display',serif",fontSize:19,fontWeight:700,color:"#B8860B"}}>₹{l.price?.toLocaleString("en-IN")}</div>
+                  <div style={{fontFamily:"'Special Elite',monospace",fontSize:19,color:"#B8860B"}}>₹{l.price?.toLocaleString("en-IN")}</div>
                   <span className="tag">{l.condition}</span>
                 </div>
               </div>
@@ -1106,7 +1106,7 @@ function MarketView({ sellers, listings, saveSellers, saveListings, session, ope
         <div style={{maxWidth:560}}>
           {!session ? (
             <div style={{textAlign:"center",padding:"48px 0"}}>
-              <div style={{fontFamily:"'Playfair Display',serif",fontSize:24,fontWeight:700,marginBottom:12}}>Sign in to list a watch</div>
+              <div style={{fontFamily:"'Special Elite',monospace",fontSize:24,marginBottom:12}}>Sign in to list a watch</div>
               <p style={{color:"#4A423A",marginBottom:24,lineHeight:1.7}}>You need a seller account to create listings.</p>
               <button className="btn-ink" onClick={()=>openAuth("seller")}>Sign in as Seller →</button>
             </div>
@@ -1134,7 +1134,7 @@ function MarketView({ sellers, listings, saveSellers, saveListings, session, ope
       {tab==="apply" && !appDone && (
         <div style={{maxWidth:560}}>
           <div style={{marginBottom:24}}>
-            <h3 style={{fontFamily:"'Playfair Display',serif",fontSize:26,fontWeight:700,marginBottom:10}}>Apply for Verified status</h3>
+            <h3 style={{fontFamily:"'Special Elite',monospace",fontSize:26,marginBottom:10}}>Apply for Verified status</h3>
             <div style={{background:"#fff",border:"1.5px solid var(--bd)",borderRadius:6,padding:16,marginBottom:20}}>
               {[["01","Apply below — 2 minutes"],["02","Team reviews within 72 hours"],["03","5 sales at 4.5+ = Verified ✦ badge"],["04","25 sales at 4.8+ = Top Seller badge"]].map(([s,t])=>(
                 <div key={s} style={{display:"flex",gap:12,marginBottom:10}}><span style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:"#B8860B",letterSpacing:"0.1em",marginTop:2,flexShrink:0}}>{s}</span><span style={{fontSize:13,color:"#4A423A"}}>{t}</span></div>
@@ -1154,8 +1154,8 @@ function MarketView({ sellers, listings, saveSellers, saveListings, session, ope
 
       {tab==="apply" && appDone && (
         <div style={{textAlign:"center",padding:"60px 0"}}>
-          <div style={{fontSize:48,color:"#2E7D52",fontWeight:900,marginBottom:12}}>✦</div>
-          <div style={{fontFamily:"'Playfair Display',serif",fontSize:36,fontWeight:900,marginBottom:8}}>Application in.</div>
+          <div style={{fontSize:48,color:"#2E7D52",fontWeight:400,marginBottom:12}}>✦</div>
+          <div style={{fontFamily:"'Special Elite',monospace",fontSize:36,marginBottom:8}}>Application in.</div>
           <p style={{color:"#4A423A",fontSize:14,maxWidth:420,margin:"0 auto",lineHeight:1.75}}>We review within 72 hours. Complete 5 sales at 4.5+ to earn your Verified badge.</p>
         </div>
       )}
@@ -1184,7 +1184,7 @@ function SellerDash({ session, sellers, saveSellers, listings, saveListings, toa
       <div style={{marginBottom:28}}>
         <span className="sl">Seller Dashboard</span>
         <div style={{display:"flex",alignItems:"center",gap:16,flexWrap:"wrap"}}>
-          <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:34,fontWeight:900,letterSpacing:"-0.02em"}}>
+          <h2 style={{fontFamily:"'Special Elite',monospace",fontSize:34,letterSpacing:"-0.02em"}}>
             {mySeller?.name||session.user.name}
           </h2>
           {mySeller?.verified
@@ -1197,7 +1197,7 @@ function SellerDash({ session, sellers, saveSellers, listings, saveListings, toa
       <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:14,marginBottom:28}}>
         {[["Total Listings",myListings.length],["Verified",myListings.filter(l=>l.verified).length],["Sales",mySeller?.sales||0],["Rating",mySeller?.rating?`★ ${mySeller.rating}`:"—"]].map(([k,v])=>(
           <div key={k} className="card" style={{textAlign:"center",padding:"20px 16px"}}>
-            <div style={{fontFamily:"'Playfair Display',serif",fontSize:28,fontWeight:700,color:"#B8860B",marginBottom:4}}>{v}</div>
+            <div style={{fontFamily:"'Special Elite',monospace",fontSize:28,color:"#B8860B",marginBottom:4}}>{v}</div>
             <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#8A7E74",letterSpacing:"0.1em",textTransform:"uppercase"}}>{k}</div>
           </div>
         ))}
@@ -1213,7 +1213,7 @@ function SellerDash({ session, sellers, saveSellers, listings, saveListings, toa
         <div>
           {!mySeller?.verified && (
             <div style={{background:"var(--gbg)",border:"1.5px solid var(--gbd)",borderRadius:6,padding:20,marginBottom:20}}>
-              <div style={{fontFamily:"'Playfair Display',serif",fontSize:18,fontWeight:700,marginBottom:8}}>Get Verified ✦</div>
+              <div style={{fontFamily:"'Special Elite',monospace",fontSize:18,marginBottom:8}}>Get Verified ✦</div>
               <p style={{fontSize:13.5,color:"#4A423A",lineHeight:1.7}}>Complete 5 sales at 4.5+ average rating and you'll earn the Verified badge. It appears on all your listings and boosts buyer trust significantly.</p>
             </div>
           )}
@@ -1221,9 +1221,9 @@ function SellerDash({ session, sellers, saveSellers, listings, saveListings, toa
             {myListings.slice(0,4).map(l=>(
               <div key={l.id} className="card">
                 {l.verified && <span className="tag tag-gold" style={{display:"inline-block",marginBottom:8}}>✦ Verified</span>}
-                <div style={{fontFamily:"'Playfair Display',serif",fontSize:18,fontWeight:700}}>{l.brand} {l.model}</div>
+                <div style={{fontFamily:"'Special Elite',monospace",fontSize:18,fontWeight:700}}>{l.brand} {l.model}</div>
                 <div style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:"#8A7E74",marginBottom:8}}>{l.decade} · {l.condition}</div>
-                <div style={{fontFamily:"'Playfair Display',serif",fontSize:18,fontWeight:700,color:"#B8860B"}}>₹{l.price?.toLocaleString("en-IN")}</div>
+                <div style={{fontFamily:"'Special Elite',monospace",fontSize:18,color:"#B8860B"}}>₹{l.price?.toLocaleString("en-IN")}</div>
               </div>
             ))}
           </div>
@@ -1237,14 +1237,14 @@ function SellerDash({ session, sellers, saveSellers, listings, saveListings, toa
             <div key={l.id} className="card">
               <div style={{display:"flex",justifyContent:"space-between",marginBottom:8}}>
                 <div>
-                  <div style={{fontFamily:"'Playfair Display',serif",fontSize:18,fontWeight:700}}>{l.brand} {l.model}</div>
+                  <div style={{fontFamily:"'Special Elite',monospace",fontSize:18,fontWeight:700}}>{l.brand} {l.model}</div>
                   <div style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:"#8A7E74"}}>{l.decade} · Ref. {l.reference}</div>
                 </div>
                 <span className={`tag ${l.verified?"tag-gold":"tag-red"}`}>{l.verified?"✦ Live":"Pending"}</span>
               </div>
               <p style={{fontSize:12,color:"#4A423A",lineHeight:1.6,marginBottom:12}}>{l.description}</p>
               <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
-                <div style={{fontFamily:"'Playfair Display',serif",fontSize:18,fontWeight:700,color:"#B8860B"}}>₹{l.price?.toLocaleString("en-IN")}</div>
+                <div style={{fontFamily:"'Special Elite',monospace",fontSize:18,color:"#B8860B"}}>₹{l.price?.toLocaleString("en-IN")}</div>
                 <button className="btn-ghost" style={{fontSize:11,padding:"6px 12px",color:"var(--red)",borderColor:"var(--rbd)"}} onClick={()=>{saveListings(listings.filter(x=>x.id!==l.id));toast("Removed.");}}>Remove</button>
               </div>
             </div>
@@ -1290,7 +1290,7 @@ function AdminView({ inventory, saveInventory, requests, saveRequests, sellers, 
   return (
     <div className="fade-in">
       <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-end",marginBottom:20}}>
-        <div><span className="sl">Admin Panel</span><h2 style={{fontFamily:"'Playfair Display',serif",fontSize:32,fontWeight:900,letterSpacing:"-0.02em"}}>The Horological Catalog</h2></div>
+        <div><span className="sl">Admin Panel</span><h2 style={{fontFamily:"'Special Elite',monospace",fontSize:32,letterSpacing:"-0.02em"}}>The Horological Catalog</h2></div>
         <div style={{display:"flex",gap:8}}>
           <span className="tag">{requests.length} req</span>
           <span className="tag tag-grn">{inventory.filter(w=>w.available).length} stock</span>
@@ -1313,7 +1313,7 @@ function AdminView({ inventory, saveInventory, requests, saveRequests, sellers, 
               <div style={{display:"flex",justifyContent:"space-between",marginBottom:10}}>
                 <div>
                   <div style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:"#8A7E74",letterSpacing:"0.12em",marginBottom:4}}>{r.id} · {r.type==="auth"?"AUTH":"SOURCING"} · ₹{r.amount}{r.txnId?` · UTR:${r.txnId}`:""}</div>
-                  <div style={{fontFamily:"'Playfair Display',serif",fontSize:20,fontWeight:700}}>{r.watch}</div>
+                  <div style={{fontFamily:"'Special Elite',monospace",fontSize:20,fontWeight:700}}>{r.watch}</div>
                   <div style={{fontSize:12,color:"#4A423A"}}>{r.name} · {r.email}{r.phone?" · "+r.phone:""}</div>
                 </div>
                 <span className="tag tag-gold">{r.status}</span>
@@ -1336,8 +1336,8 @@ function AdminView({ inventory, saveInventory, requests, saveRequests, sellers, 
           {inventory.map(w=>(
             <div key={w.id} className="card">
               <div style={{display:"flex",justifyContent:"space-between",marginBottom:8}}>
-                <div><div style={{fontFamily:"'Playfair Display',serif",fontSize:17,fontWeight:700}}>{w.brand} {w.model}</div><div style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:"#8A7E74"}}>{w.reference} · {w.decade}</div></div>
-                <div style={{fontFamily:"'Playfair Display',serif",fontSize:16,color:"#B8860B",fontWeight:700}}>₹{w.price?.toLocaleString("en-IN")}</div>
+                <div><div style={{fontFamily:"'Special Elite',monospace",fontSize:17,fontWeight:700}}>{w.brand} {w.model}</div><div style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:"#8A7E74"}}>{w.reference} · {w.decade}</div></div>
+                <div style={{fontFamily:"'Special Elite',monospace",fontSize:16,color:"#B8860B",fontWeight:700}}>₹{w.price?.toLocaleString("en-IN")}</div>
               </div>
               <p style={{fontSize:12,color:"#4A423A",lineHeight:1.6,marginBottom:12}}>{w.description}</p>
               <div style={{display:"flex",gap:8}}>
@@ -1357,7 +1357,7 @@ function AdminView({ inventory, saveInventory, requests, saveRequests, sellers, 
                 <div className="avatar">{s.avatar}</div>
                 <div style={{flex:1}}>
                   <div style={{display:"flex",justifyContent:"space-between"}}>
-                    <div><div style={{fontFamily:"'Playfair Display',serif",fontSize:15,fontWeight:700}}>{s.name}</div><div style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:"#8A7E74"}}>{s.handle} · {s.city}</div></div>
+                    <div><div style={{fontFamily:"'Special Elite',monospace",fontSize:15,fontWeight:700}}>{s.name}</div><div style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:"#8A7E74"}}>{s.handle} · {s.city}</div></div>
                     {s.verified && <span className="vbadge">✦</span>}
                   </div>
                 </div>
@@ -1381,8 +1381,8 @@ function AdminView({ inventory, saveInventory, requests, saveRequests, sellers, 
             return (
               <div key={l.id} className="card">
                 <div style={{display:"flex",justifyContent:"space-between",marginBottom:8}}>
-                  <div><div style={{fontFamily:"'Playfair Display',serif",fontSize:17,fontWeight:700}}>{l.brand} {l.model}</div><div style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:"#8A7E74"}}>{l.decade} · by {s?.name||"unknown"}</div></div>
-                  <div style={{fontFamily:"'Playfair Display',serif",fontSize:16,color:"#B8860B",fontWeight:700}}>₹{l.price?.toLocaleString("en-IN")}</div>
+                  <div><div style={{fontFamily:"'Special Elite',monospace",fontSize:17,fontWeight:700}}>{l.brand} {l.model}</div><div style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:"#8A7E74"}}>{l.decade} · by {s?.name||"unknown"}</div></div>
+                  <div style={{fontFamily:"'Special Elite',monospace",fontSize:16,color:"#B8860B",fontWeight:700}}>₹{l.price?.toLocaleString("en-IN")}</div>
                 </div>
                 <p style={{fontSize:12,color:"#4A423A",lineHeight:1.6,marginBottom:12}}>{l.description}</p>
                 <button onClick={()=>saveListings(listings.map(x=>x.id!==l.id?x:{...x,verified:!x.verified}))} className={l.verified?"btn-ghost":"btn-gold"} style={{fontSize:11,padding:"7px 12px",width:"100%",color:l.verified?"var(--red)":"",borderColor:l.verified?"var(--rbd)":""}}>
@@ -1401,7 +1401,7 @@ function AdminView({ inventory, saveInventory, requests, saveRequests, sellers, 
               <div key={u.id} className="card">
                 <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:10}}>
                   <div>
-                    <div style={{fontFamily:"'Playfair Display',serif",fontSize:17,fontWeight:700}}>{u.name}</div>
+                    <div style={{fontFamily:"'Special Elite',monospace",fontSize:17,fontWeight:700}}>{u.name}</div>
                     <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#8A7E74",marginTop:2}}>{u.email}</div>
                     {u.phone && <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#8A7E74"}}>{u.phone}</div>}
                   </div>
